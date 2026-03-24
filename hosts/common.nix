@@ -3,6 +3,7 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  security.sudo.wheelNeedsPassword = false;
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
   services.openssh.enable = true;
@@ -12,10 +13,9 @@
   console.keyMap = "us";
 
   environment.systemPackages = with pkgs; [
+    kitty.terminfo
     neovim
-    curl
-    wget
-    git
-    gh
+    ffmpeg
+    mpv
   ];
 }

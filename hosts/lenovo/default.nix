@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -6,10 +6,13 @@
     ./hardware.nix
   ];
 
+  programs.zsh.enable = true;
+
   networking.hostName = "lenovo";
   users.users.drama = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
+    shell = pkgs.zsh;
   };
 
   boot.loader.systemd-boot.enable = true;

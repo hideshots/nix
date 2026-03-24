@@ -1,10 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.username = "drama";
-  home.homeDirectory = "/home/drama";
-
-  home.stateVersion = "25.11";
+  imports = [
+    ../../modules/user/shell.nix
+    ../../modules/user/yazi.nix
+  ];
 
   programs.home-manager.enable = true;
 
@@ -19,4 +19,8 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  home.username = "drama";
+  home.homeDirectory = "/home/drama";
+  home.stateVersion = "25.11";
 }
