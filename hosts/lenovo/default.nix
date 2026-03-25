@@ -2,9 +2,10 @@
 
 {
   imports = [
-    ../common.nix
     ../../modules/system/sddm
+
     ./hardware.nix
+    ../common.nix
   ];
 
   programs.zsh.enable = true;
