@@ -29,8 +29,6 @@
           userModule = ./users/drama;
         };
 
-        # Future host example.
-        # Enable this once ./hosts/desktop and the user module exist.
         desktop = {
           system = "x86_64-linux";
           username = "drama";
@@ -71,9 +69,7 @@
     in {
       nixosConfigurations = {
         lenovo = mkHost "lenovo";
-
-        # Uncomment when the host path exists:
-        # desktop = mkHost "desktop";
+        desktop = mkHost "desktop";
       };
     };
 }

@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/system/sddm
+    ../../modules/system/hyprland.nix
 
     ./hardware.nix
     ../common.nix
