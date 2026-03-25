@@ -1,3 +1,5 @@
 [submodule "archlinux/quickshell/Callista"]
 	path = modules/user/quickshell/Callista
 	url = https://github.com/hideshots/Callista.git
+[submodule "modules/user/quickshell/Callista"]
+	path = modules/
