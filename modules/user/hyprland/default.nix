@@ -4,18 +4,43 @@ let
   link = config.lib.file.mkOutOfStoreSymlink;
   hyprDir = "${config.home.homeDirectory}/dotfiles/modules/user/hyprland";
 in {
+
   home.packages = with pkgs; [
-    hypridle
+    # Hyprland helpers
     hyprpicker
     hyprsunset
-    grim
-    slurp
-    satty
-    jq
+    hyprfreeze
+    hypridle
+
+    # Screenshots / clipboard / wallpapers
     wl-clipboard
     cliphist
-    swww
     waypaper
+    slurp
+    pywal
+    satty
+    grim
+    swww
+    jq
+
+    # Launchers / shell
+    quickshell
+    vicinae
+    rofi
+
+    # Apps called directly from binds / exec-once
+    mission-center
+    brightnessctl
+    easyeffects
+    pavucontrol
+    playerctl
+    libnotify
+    nautilus
+    kitty
+
+    # Tray / desktop helpers
+    kdePackages.plasma-workspace
+    networkmanagerapplet
   ];
 
   xdg.configFile = {
