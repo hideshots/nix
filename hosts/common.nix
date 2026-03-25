@@ -1,7 +1,14 @@
 { pkgs, ... }:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  imports = [
+    ../modules/system/fonts.nix
+    ../modules/system/vpn.nix
+  ];
+
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+  };
 
   security.sudo.wheelNeedsPassword = false;
   networking.networkmanager.enable = true;

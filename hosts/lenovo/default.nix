@@ -3,6 +3,7 @@
 {
   imports = [
     ../common.nix
+    ../../modules/system/sddm
     ./hardware.nix
   ];
 
