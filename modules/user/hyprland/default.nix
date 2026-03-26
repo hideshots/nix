@@ -5,6 +5,10 @@ let
   hyprDir = "${config.home.homeDirectory}/dotfiles/modules/user/hyprland";
 in {
 
+  imports = [
+    ../quickshell
+  ];
+
   home.packages = with pkgs; [
     # Hyprland helpers
     hyprpicker
@@ -24,7 +28,6 @@ in {
     jq
 
     # Launchers / shell
-    quickshell
     vicinae
     rofi
 
