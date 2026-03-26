@@ -19,10 +19,6 @@
     fd
   ];
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
   home.username = "drama";
   home.homeDirectory = "/home/drama";
   home.stateVersion = "25.11";
