@@ -4,6 +4,7 @@
   imports = [
     ../../modules/system/sddm
     ../../modules/system/hyprland.nix
+    ../../modules/system/sway.nix
 
     ./hardware.nix
     ../common.nix

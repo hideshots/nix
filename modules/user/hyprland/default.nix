@@ -7,6 +7,7 @@ in {
 
   imports = [
     ../quickshell
+    ../kitty.nix
   ];
 
   home.packages = with pkgs; [
@@ -36,7 +37,6 @@ in {
     playerctl
     libnotify
     nautilus
-    kitty
 
     # Tray / desktop helpers
     kdePackages.plasma-workspace
