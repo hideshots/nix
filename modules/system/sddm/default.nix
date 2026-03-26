@@ -1,23 +1,22 @@
 { pkgs, ... }:
 
 let
-  tahoeSddmTheme = pkgs.stdenvNoCC.mkDerivation {
-    pname = "tahoe-sddm-theme";
+  opalineSddmTheme = pkgs.stdenvNoCC.mkDerivation {
+    pname = "opaline-sddm-theme";
     version = "1.0";
-    src = ./.;
+    src = ./Opaline;
 
     dontBuild = true;
 
     installPhase = ''
       runHook preInstall
 
-      themeDir="$out/share/sddm/themes/tahoe"
+      themeDir="$out/share/sddm/themes/Opaline"
       mkdir -p "$themeDir"
 
       cp Main.qml "$themeDir/"
       cp metadata.desktop "$themeDir/"
       cp theme.conf "$themeDir/"
-
       cp -r components "$themeDir/"
       cp -r shaders "$themeDir/"
 
@@ -29,14 +28,13 @@ in
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "${tahoeSddmTheme}/share/sddm/themes/tahoe";
+    theme = "Opaline";
 
     extraPackages = with pkgs; [
-      # add packages here only if SDDM logs show missing QML/Qt modules
     ];
   };
 
   environment.systemPackages = [
-    tahoeSddmTheme
+    opalineSddmTheme
   ];
 }
