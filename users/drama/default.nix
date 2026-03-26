@@ -2,9 +2,7 @@
 
 {
   imports = [
-    ../../modules/user/fastfetch.nix
     ../../modules/user/shell.nix
-    ../../modules/user/yazi.nix
     ../../modules/user/kitty.nix
     ../../modules/user/toolchain
     ../../modules/user/wallpaper
