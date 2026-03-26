@@ -19,12 +19,9 @@ in {
     # Screenshots / clipboard / wallpapers
     wl-clipboard
     cliphist
-    waypaper
     slurp
-    pywal
     satty
     grim
-    swww
     jq
 
     # Launchers / shell
