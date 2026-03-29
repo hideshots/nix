@@ -3,7 +3,7 @@
 {
   imports = [
     ./fastfetch.nix
-    ./yazi.nix
+    ./yazi
     ./tmux.nix
   ];
 
