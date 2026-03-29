@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./fastfetch.nix
+    ./fastfetch
     ./yazi
     ./tmux.nix
   ];
