@@ -7,7 +7,7 @@ in {
 
   imports = [
     ../quickshell
-    ../kitty.nix
+    ../kitty
   ];
 
   home.packages = with pkgs; [

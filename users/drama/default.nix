@@ -3,7 +3,7 @@
 {
   imports = [
     ../../modules/user/shell.nix
-    ../../modules/user/kitty.nix
+    ../../modules/user/kitty
     ../../modules/user/toolchain
     ../../modules/user/wallpaper
     ../../modules/user/neovim

@@ -5,7 +5,7 @@ let
   swayDir = "${config.home.homeDirectory}/dotfiles/modules/user/sway";
 in {
   imports = [
-    ../kitty.nix
+    ../kitty
   ];
 
   home.packages = with pkgs; [
