@@ -8,7 +8,7 @@ in {
   imports = [
     ../fastfetch
     ../yazi
-    ../tmux.nix
+    ../tmux
   ];
 
   home.packages = with pkgs; [
@@ -16,6 +16,7 @@ in {
     starship
     fzf
     git
+    gh
     zoxide
     ncdu
   ];
