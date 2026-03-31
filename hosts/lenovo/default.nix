@@ -74,6 +74,7 @@
     };
 
     systemPackages = with pkgs; [
+      gammastep
       nbfc-linux
     ];
 

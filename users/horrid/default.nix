@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, inputs, username, ... }:
 
 {
   imports = [
@@ -12,7 +12,8 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    fastfetch
+    inputs.helium.packages.${system}.default
+
     lazygit
     ripgrep
     tree
