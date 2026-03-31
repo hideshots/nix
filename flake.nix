@@ -28,6 +28,10 @@
   outputs = inputs@{ nixpkgs, home-manager, quickshell, ... }:
     let
       lib = nixpkgs.lib;
+      mkPkgs = system: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
 
       hosts = {
         lenovo = {
@@ -35,11 +39,14 @@
           username = "horrid";
           userModule = ./users/horrid;
         };
+      };
 
-        desktop = {
+      homes = {
+        "drama@desktop" = {
           system = "x86_64-linux";
-          username = "horrid";
-          userModule = ./users/horrid;
+          username = "drama";
+          hostname = "desktop";
+          userModule = ./users/drama;
         };
       };
 
@@ -73,10 +80,29 @@
             }
           ];
         };
+      mkHome = name:
+        let
+          home = homes.${name};
+        in
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = mkPkgs home.system;
+
+          extraSpecialArgs = {
+            inherit inputs;
+            inherit (home) hostname username;
+          };
+
+          modules = [
+            home.userModule
+          ];
+        };
     in {
       nixosConfigurations = {
         lenovo = mkHost "lenovo";
-        desktop = mkHost "desktop";
+      };
+
+      homeConfigurations = {
+        "drama@desktop" = mkHome "drama@desktop";
       };
     };
 }
