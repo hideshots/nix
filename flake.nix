@@ -2,6 +2,7 @@
   inputs = {
     self.submodules = true;
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -31,14 +32,14 @@
       hosts = {
         lenovo = {
           system = "x86_64-linux";
-          username = "drama";
-          userModule = ./users/drama;
+          username = "horrid";
+          userModule = ./users/horrid;
         };
 
         desktop = {
           system = "x86_64-linux";
-          username = "drama";
-          userModule = ./users/drama;
+          username = "horrid";
+          userModule = ./users/horrid;
         };
       };
 

@@ -19,7 +19,7 @@
     fd
   ];
 
-  home.username = "drama";
-  home.homeDirectory = "/home/drama";
+  home.username = "horrid";
+  home.homeDirectory = "/home/horrid";
   home.stateVersion = "25.11";
 }
