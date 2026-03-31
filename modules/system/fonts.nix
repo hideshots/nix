@@ -1,6 +1,8 @@
 { pkgs, inputs, ... }:
 
 let
+  system = pkgs.stdenv.hostPlatform.system;
+
   appleEmoji = pkgs.stdenvNoCC.mkDerivation {
     pname = "apple-color-emoji";
     version = "2026-02-18";

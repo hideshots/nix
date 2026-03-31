@@ -3,8 +3,9 @@
 let
   link = config.lib.file.mkOutOfStoreSymlink;
   home = config.home.homeDirectory;
+  system = pkgs.stdenv.hostPlatform.system;
 
-  quickshellPkg = inputs.quickshell.packages.${pkgs.system}.default;
+  quickshellPkg = inputs.quickshell.packages.${system}.default;
 
   qmlImportPath = lib.concatStringsSep ":" [
     "${quickshellPkg}/lib/qt-6/qml"

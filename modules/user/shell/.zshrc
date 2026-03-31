@@ -7,7 +7,10 @@ elif [ -r "$HOME/.local/share/antidote/antidote.zsh" ]; then
 fi
 
 zstyle ':antidote:bundle' use-friendly-names 'yes'
-(( $+functions[antidote] )) && antidote load
+autoload -Uz compinit
+compinit
+
+(( $+functions[antidote] )) && antidote load "${ZDOTDIR:-$HOME}/.zsh_plugins.txt"
 
 HISTSIZE=50000
 SAVEHIST=50000
@@ -18,9 +21,6 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
-
-autoload -Uz compinit
-compinit
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'

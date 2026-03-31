@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, hostname, username, ... }:
 
 {
   imports = [
@@ -10,9 +10,9 @@
     ../../modules/system/sway.nix
   ];
 
-  networking.hostName = "lenovo";
+  networking.hostName = hostname;
 
-  users.users.horrid = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.zsh;

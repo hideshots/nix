@@ -10,7 +10,6 @@
     experimental-features = [ "nix-command" "flakes" ];
   };
 
-  nixpkgs.config.allowUnfree = true;
   security.sudo.wheelNeedsPassword = false;
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;

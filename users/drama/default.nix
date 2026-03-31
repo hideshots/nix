@@ -1,15 +1,15 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, username, ... }:
 
 let
-  home = config.home.homeDirectory;
+  homeDir = config.home.homeDirectory;
   link = config.lib.file.mkOutOfStoreSymlink;
-  dot = path: link "${home}/dotfiles/${path}";
+  dot = path: link "${homeDir}/dotfiles/${path}";
   system = pkgs.stdenv.hostPlatform.system;
 in {
   programs.home-manager.enable = true;
 
-  home.username = "drama";
-  home.homeDirectory = "/home/drama";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
@@ -23,6 +23,7 @@ in {
   home.file = {
     ".zshrc".source = dot "modules/user/shell/.zshrc";
     ".zsh_plugins.txt".source = dot "modules/user/shell/.zsh_plugins.txt";
+    ".antidote".source = "${pkgs.antidote}/share/antidote";
     ".tmux.conf".source = dot "modules/user/tmux/.tmux.conf";
     ".local/bin/pywal_update.sh" = {
       source = dot "modules/user/pywal/pywal_update.sh";
