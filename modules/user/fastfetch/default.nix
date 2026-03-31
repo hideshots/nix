@@ -10,5 +10,5 @@ in {
   };
 
   xdg.configFile."fastfetch".source =
-    dot "archlinux/fastfetch";
+    dot "modules/user/fastfetch";
 }
