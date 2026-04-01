@@ -1,5 +1,8 @@
 { pkgs, inputs, username, ... }:
 
+let
+  system = pkgs.stdenv.hostPlatform.system;
+in
 {
   imports = [
     ../../modules/user/shell

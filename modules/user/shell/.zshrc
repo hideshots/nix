@@ -91,3 +91,10 @@ bindkey -M emacs '^N' history-substring-search-down
 
 ZLE_RPROMPT_INDENT=0
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/home/drama/.bun/_bun" ] && source "/home/drama/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
