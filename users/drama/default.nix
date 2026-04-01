@@ -40,5 +40,6 @@ in {
     "sway/config".source = dot "modules/user/sway/config";
     "i3status".source = dot "modules/user/sway/i3status";
     "quickshell/default".source = dot "modules/user/quickshell/Callista";
+    "MangoHud/MangoHud.conf".source = dot "modules/user/mangohud/MangoHud.conf";
   };
 }
