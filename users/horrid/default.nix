@@ -16,6 +16,7 @@ in
 
   home.packages = with pkgs; [
     inputs.helium.packages.${system}.default
+    moonlight-qt
 
     lazygit
     ripgrep
