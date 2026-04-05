@@ -52,6 +52,10 @@
 
   networking.networkmanager.wifi.powersave = false;
 
+  boot.extraModprobeConfig = ''
+    options iwlwifi bt_coex_active=0
+  '';
+
   services = {
     upower.enable = true;
     power-profiles-daemon.enable = true;
