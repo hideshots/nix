@@ -10,8 +10,13 @@ zstyle ':antidote:bundle' use-friendly-names 'yes'
 autoload -Uz compinit
 compinit
 
+if [ ! -s "${ZDOTDIR:-$HOME}/.zsh_plugins.zsh" ]; then
+  rm -f "${ZDOTDIR:-$HOME}/.zsh_plugins.zsh"
+fi
+
 (( $+functions[antidote] )) && antidote load "${ZDOTDIR:-$HOME}/.zsh_plugins.txt"
 
+HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
 HISTSIZE=50000
 SAVEHIST=50000
 setopt HIST_EXPIRE_DUPS_FIRST
