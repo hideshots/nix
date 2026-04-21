@@ -35,7 +35,7 @@ open = [
 ]
 
 bottles = [
-  { run = 'bottles-cli run -b "Global" -e %s1', orphan = true, for = "linux" },
+  { run = 'bottles-cli run -b "Main" -e %s1', orphan = true, for = "linux" },
 ]
 
 [open]
