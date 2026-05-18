@@ -86,6 +86,7 @@ setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_SILENT
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:/home/horrid/.spicetify"
 export PATH="$HOME/.local/share/npm-global/bin:$HOME/.local/bin:$PATH"
 
