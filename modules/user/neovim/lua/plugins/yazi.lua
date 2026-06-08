@@ -1,6 +1,10 @@
 return {
   "mikavilpas/yazi.nvim",
+  cmd = { "Yazi", "Yazi cwd", "Yazi toggle" },
   event = "VeryLazy",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
   keys = {
     {
       "<leader>e",

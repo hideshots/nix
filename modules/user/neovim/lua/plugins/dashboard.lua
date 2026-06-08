@@ -1,5 +1,6 @@
 return {
   "nvimdev/dashboard-nvim",
+  cmd = "Dashboard",
   event = "VimEnter",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
@@ -25,12 +26,24 @@ return {
           {
             icon = "",
             icon_hl = "DashboardIcon",
-            desc = "Find File",
+            desc = "Open Yazi",
             desc_hl = "DashboardDesc",
-            key = "f",
+            key = "e",
             key_hl = "DashboardKey",
             key_format = " [%s]",
-            action = "Telescope find_files",
+            action = "Yazi",
+          },
+          {
+            icon = "",
+            icon_hl = "DashboardIcon",
+            desc = "Recent Files",
+            desc_hl = "DashboardDesc",
+            key = "r",
+            key_hl = "DashboardKey",
+            key_format = " [%s]",
+            action = function()
+              require("telescope.builtin").oldfiles()
+            end,
           },
           {
             icon = "",
@@ -41,26 +54,6 @@ return {
             key_hl = "DashboardKey",
             key_format = " [%s]",
             action = "ene | startinsert",
-          },
-          {
-            icon = "",
-            icon_hl = "DashboardIcon",
-            desc = "Recent Files",
-            desc_hl = "DashboardDesc",
-            key = "r",
-            key_hl = "DashboardKey",
-            key_format = " [%s]",
-            action = "Telescope oldfiles",
-          },
-          {
-            icon = "",
-            icon_hl = "DashboardIcon",
-            desc = "Obsidian",
-            desc_hl = "DashboardDesc",
-            key = "o",
-            key_hl = "DashboardKey",
-            key_format = " [%s]",
-            action = "ObsidianQuickSwitch",
           },
         },
         footer = {
