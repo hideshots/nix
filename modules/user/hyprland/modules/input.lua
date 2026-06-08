@@ -33,6 +33,9 @@ for _, name in ipairs({
   "touch-passthrough",
   "touch-passthrough-1",
   "mouse-passthrough",
+  "kingston-hyperx-pulsefire-surge",
+  "kingston-hyperx-pulsefire-surge-keyboard",
+  "kingston-hyperx-pulsefire-surge-keyboard-1",
   "mouse-passthrough-(absolute)",
   "keyboard-passthrough",
 }) do

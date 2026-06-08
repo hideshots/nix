@@ -12,8 +12,8 @@ hl.config({
     layout = "dwindle",
   },
   decoration = {
-    rounding = 7,
-    dim_special = 0.45,
+    rounding = 8,
+    dim_special = 0.2,
     shadow = {
       enabled = true,
       range = 70,
@@ -26,10 +26,13 @@ hl.config({
     blur = {
       enabled = true,
       ignore_opacity = true,
-      special = true,
+      special = false,
       noise = 0.02,
       size = 2,
       passes = 3,
+      xray = false,
+      popups = true,
+      popups_ignorealpha = 0.2,
       vibrancy = 0.07,
       vibrancy_darkness = 1,
     },

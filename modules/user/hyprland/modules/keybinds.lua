@@ -92,8 +92,6 @@ bind_all({
 
 -- Focus movement
 bind_all({
-  { "ALT + Tab", hl.dsp.layout("cyclenext") },
-  { "SHIFT + ALT + Tab", hl.dsp.layout("cycleprev") },
   { main_mod .. " + Tab", hl.dsp.focus({ workspace = "previous" }) },
   { main_mod .. " + h", hl.dsp.focus({ direction = "l" }) },
   { main_mod .. " + j", hl.dsp.focus({ direction = "d" }) },

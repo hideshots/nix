@@ -59,5 +59,5 @@ layer_effect({
   ignore_alpha = blur_cutoff.soft,
 })
 
-hl.window_rule({ name = "quickshell-alert", match = { class = "^org\\.quickshell$", title = "^Alert$" }, float = true, center = true, rounding = 20, rounding_power = 2, no_shadow = true })
-hl.window_rule({ name = "quickshell-settings", match = { class = "^org\\.quickshell$", title = "^Settings$" }, float = true, rounding = 18, rounding_power = 2 })
+hl.window_rule({ name = "quickshell-alert", match = { class = "^org\\.quickshell$", title = "^Alert$" }, float = true, center = true, rounding = 20, rounding_power = 3, no_shadow = true })
+hl.window_rule({ name = "quickshell-settings", match = { class = "^org\\.quickshell$", title = "^Settings$" }, float = true, rounding = 20, rounding_power = 3 })
