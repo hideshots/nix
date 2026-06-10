@@ -4,7 +4,15 @@ hl.permission({
   mode = "allow",
 })
 
--- plugin:borders-plus-plus:add_borders = 1
--- plugin:borders-plus-plus:col.border_1 = rgb(000000)
--- plugin:borders-plus-plus:border_size_1 = 1
--- plugin:borders-plus-plus:natural_rounding = on
+-- hl.config({
+--     plugin = {
+--         borders_plus_plus = {
+--             add_borders = 2,
+--             natural_rounding = true,
+--             col = {
+--                 border_1 = "rgb(000000)"
+--             },
+--             border_size_1 = 1
+--         }
+--     }
+-- })
