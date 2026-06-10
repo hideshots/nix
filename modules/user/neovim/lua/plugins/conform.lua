@@ -16,22 +16,6 @@ return {
   },
   opts = {
     notify_on_error = true,
-    format_on_save = function(bufnr)
-      local filetype = vim.bo[bufnr].filetype
-      local disable = {
-        markdown = true,
-        text = true,
-      }
-
-      if disable[filetype] then
-        return nil
-      end
-
-      return {
-        lsp_format = "fallback",
-        timeout_ms = 1000,
-      }
-    end,
     formatters_by_ft = {
       bash = { "shfmt" },
       c = { "clang-format" },

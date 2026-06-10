@@ -88,6 +88,22 @@ return {
 
     enable_if_installed("clangd", "clangd")
 
+    local qmlls_bin = has_bin("qmlls6") and "qmlls6" or (has_bin("qmlls") and "qmlls" or nil)
+    if qmlls_bin then
+      vim.lsp.config("qmlls", {
+        cmd = { qmlls_bin },
+        root_markers = {
+          ".qmlls.ini",
+          "shell.qml",
+          "CMakeLists.txt",
+          "qmldir",
+          ".git",
+        },
+        capabilities = capabilities,
+      })
+      vim.lsp.enable("qmlls")
+    end
+
     if has_bin("rust-analyzer") then
       vim.lsp.config("rust_analyzer", {
         settings = {
