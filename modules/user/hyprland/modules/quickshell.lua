@@ -9,6 +9,7 @@ hl.bind(main_mod .. " + A", sh("qs ipc call shell toggleControlCenter"))
 hl.bind(main_mod .. " + N", sh("qs ipc call shell toggleNotificationCenter"))
 hl.bind(main_mod .. " + G", sh("qs ipc call shell toggleAudioMixer"))
 hl.bind(main_mod .. " + B", sh("qs ipc --any-display call shell toggleBarVisibility"))
+hl.bind(main_mod .. " + SHIFT + B", sh("qs ipc --any-display call shell toggleWidgetsVisibility; qs ipc --any-display call shell toggleBarVisibility"))
 
 local blur_cutoff = {
   none = 0.0,

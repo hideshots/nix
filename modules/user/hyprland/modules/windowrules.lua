@@ -74,6 +74,16 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name = "special",
+  match = {
+    class = "^(helium)$",
+  },
+  workspace = "special:magic silent",
+  float = true,
+  center = true,
+})
+
+hl.window_rule({
   name = "ida-tile",
   match = {
     class = "^com\\.hex-rays\\.ida$",

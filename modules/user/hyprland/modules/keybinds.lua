@@ -86,6 +86,7 @@ bind_all({
   { main_mod .. " + CTRL + e", hl.dsp.layout("fit toend") },
   { main_mod .. " + CTRL + f", hl.dsp.layout("fit active") },
   { main_mod .. " + CTRL + v", hl.dsp.layout("fit visible") },
+  { main_mod .. " + T", hl.dsp.layout("promote") },
   { main_mod .. " + D", hl.dsp.window.cycle_next({ floating = true }) },
   { main_mod .. " + F", hl.dsp.window.fullscreen() },
 })
