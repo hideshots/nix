@@ -1,5 +1,6 @@
 local startup = {
   "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
+  "systemctl --user start hyprland-session.service",
   "gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"",
   "wl-paste --type image --watch cliphist store",
   "wl-paste --type text --watch cliphist store",

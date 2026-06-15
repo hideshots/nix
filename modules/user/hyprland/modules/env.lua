@@ -10,7 +10,7 @@ local env = {
   NVD_BACKEND = "direct",
   QT_QPA_PLATFORMTHEME = "qt6ct",
   XCURSOR_THEME = "macOS",
-  HYPRCURSOR_THEME = "macOS",
+  HYPRCURSOR_THEME = "macOS-hypr",
   XCURSOR_SIZE = "24",
   HYPRCURSOR_SIZE = "24",
 }
