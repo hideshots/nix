@@ -38,7 +38,7 @@ hl.config({
     default_monitor = "DP-1",
     no_hardware_cursors = true,
     no_break_fs_vrr = 1,
-    no_warps = true,
+    no_warps = false,
   },
 })
 

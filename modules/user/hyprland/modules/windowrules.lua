@@ -127,6 +127,7 @@ hl.window_rule({
   },
   no_initial_focus = true,
   workspace = "5",
+  ["darkwindow:shade"] = hl.plugin.darkwindow ~= nil and "blackKey" or nil,
 })
 
 hl.window_rule({
