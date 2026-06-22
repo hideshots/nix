@@ -42,3 +42,7 @@ if tmux has-session 2>/dev/null; then
   tmux source-file "${TMUX_CONF:-$HOME/.tmux.conf}"
   tmux refresh-client -S 2>/dev/null || true
 fi
+
+# vicinae
+ln -sf ~/.cache/wal/mayhem.toml ~/.local/share/vicinae/themes/mayhem.toml
+vicinae theme set mayhem
