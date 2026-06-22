@@ -41,5 +41,6 @@ in {
     "i3status".source = dot "modules/user/sway/i3status";
     "quickshell/default".source = dot "modules/user/quickshell/Callista";
     "MangoHud/MangoHud.conf".source = dot "modules/user/mangohud/MangoHud.conf";
+    "wal/templates/mayhem.toml".source = dot "modules/user/vicinae/mayhem.toml";
   };
 }
