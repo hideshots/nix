@@ -1,0 +1,24 @@
+[meta]
+version = 1
+name = "mayhem"
+description = "dark theme"
+variant = "dark"
+inherits = "vicinae-dark"
+
+[colors.core]
+background           = "#000000"
+foreground           = "#F5F5F7"
+secondary_background = "#0B0B0D"
+tertiary_background  = "#151518"
+border               = "#262629"
+accent               = "{color4}"
+
+[colors.accents]
+blue    = "#007aff"
+purple  = "#a550a7"
+green   = "#62ba46"
+magenta = "#f74f9e"
+orange  = "#f7821b"
+red     = "#ff5257"
+yellow  = "#ffc600"
+cyan    = "#007aff"
