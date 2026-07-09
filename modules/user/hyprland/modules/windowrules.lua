@@ -1,7 +1,6 @@
 local terminal = Config.terminal
 
 hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = 0, gaps_in = 0 })
-hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = 0, gaps_in = 0 })
 
 hl.window_rule({
   name = "no-gaps-wtv1",
@@ -9,18 +8,28 @@ hl.window_rule({
     float = false,
     workspace = "w[tv1]s[false]",
   },
-  border_size = 0,
-  rounding = 0,
+  -- border_size = 0,
+  rounding = 10,
 })
 
-hl.window_rule({
-  name = "no-gaps-f1",
+-- hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = 2, gaps_in = 0 })
+-- hl.window_rule({
+--   name = "no-gaps-f1",
+--   match = {
+--     float = false,
+--     workspace = "f[1]s[false]",
+--   },
+--   border_size = 0,
+--   rounding = 12,
+-- })
+--
+hl.layer_rule({
+  name = "nwg-dock-blur",
   match = {
-    float = false,
-    workspace = "f[1]s[false]",
+    namespace = "nwg-dock",
   },
-  border_size = 0,
-  rounding = 0,
+  blur = true,
+  ignore_alpha = 0,
 })
 
 hl.config({

@@ -36,6 +36,8 @@ end
 -- Utilities
 bind_all({
   { "CONTROL + SHIFT + Escape", exec(terminal .. " --class " .. terminal .. "-btop sudo btop") },
+  { "CONTROL + 0", exec("obs-cmd replay save") },
+  { "CONTROL + SHIFT + 0", exec("obs-cmd replay toggle") },
   { "CONTROL + SHIFT + TAB", exec("missioncenter") },
   { "HOME", exec("hyprfreeze -a") },
   { main_mod .. " + SHIFT + C", exec("hyprpicker -a") },
