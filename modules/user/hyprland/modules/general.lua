@@ -18,10 +18,10 @@ hl.config({
       enabled = true,
       range = 110,
       render_power = 3,
-      offset = { 0, 15 },
+      offset = { 0, 10 },
       scale = 0.95,
-      color = "rgba(000000ff)",
-      color_inactive = "rgba(000000ff)",
+      color = "rgba(000000a3)",
+      color_inactive = "rgba(0000009f)",
     },
     blur = {
       enabled = true,
