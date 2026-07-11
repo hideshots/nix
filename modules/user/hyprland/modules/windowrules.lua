@@ -12,6 +12,42 @@ hl.window_rule({
   rounding = 10,
 })
 
+hl.window_rule({
+  name = "pinned",
+  match = {
+    pin = true,
+  },
+  rounding = 5,
+  no_shadow = 1,
+  border_size = 0,
+})
+
+hl.window_rule({
+  name = "afterfx-main",
+  match = {
+    class = "^(afterfx\\.exe)$",
+    xwayland = true,
+  },
+  no_anim = true,
+})
+
+hl.window_rule({
+  name = "afterfx-popup",
+  match = {
+    class = "^(afterfx\\.exe)$",
+    xwayland = true,
+    title = "^$",
+  },
+  float = true,
+  opacity = "1.0",
+  rounding = 0,
+  no_blur = true,
+  no_anim = true,
+  -- no_focus = true,
+  -- no_initial_focus = true,
+  suppress_event = "activatefocus",
+})
+
 -- hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = 2, gaps_in = 0 })
 -- hl.window_rule({
 --   name = "no-gaps-f1",
