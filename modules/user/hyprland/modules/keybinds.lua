@@ -83,6 +83,7 @@ bind_all({
 -- Layout controls
 bind_all({
   { main_mod .. " + C", hl.dsp.window.float({ action = "toggle" }) },
+{ main_mod .. " + ALT + P", hl.dsp.window.pin() },
   { main_mod .. " + CTRL + a", hl.dsp.layout("fit all") },
   { main_mod .. " + CTRL + b", hl.dsp.layout("fit tobeg") },
   { main_mod .. " + CTRL + e", hl.dsp.layout("fit toend") },
