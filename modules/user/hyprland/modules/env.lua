@@ -2,6 +2,7 @@ local env = {
   EWW_PRIMARY_MONITOR = "1",
   MOZ_ENABLE_WAYLAND = "1",
   XDG_SESSION_TYPE = "wayland",
+  XDG_MENU_PREFIX = "arch-",
   QT_QPA_PLATFORM = "wayland",
   LIBVA_DRIVER_NAME = "nvidia",
   __GLX_VENDOR_LIBRARY_NAME = "nvidia",

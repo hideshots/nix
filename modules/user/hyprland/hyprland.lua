@@ -1,5 +1,5 @@
 local terminal = "kitty"
-local file_manager = "nautilus"
+local file_manager = "dolphin"
 local menu = "vicinae 'vicinae://toggle'"
 local main_mod = "SUPER"
 
