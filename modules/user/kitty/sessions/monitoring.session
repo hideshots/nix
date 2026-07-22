@@ -1,0 +1,10 @@
+new_tab btop
+launch sh -lc 'sudo btop'
+
+new_tab bandwhich
+launch sh -lc 'sudo bandwhich'
+
+new_tab nvtop
+launch sh -lc 'nvtop'
+
+focus_tab 0
