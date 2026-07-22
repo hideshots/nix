@@ -23,6 +23,10 @@ hl.config({
       color = "rgba(000000a3)",
       color_inactive = "rgba(0000009f)",
     },
+    motion_blur = {
+      enabled = true,
+      samples = 32
+    },
     blur = {
       enabled = true,
       ignore_opacity = true,
@@ -45,5 +49,30 @@ hl.config({
   },
   misc = {
     key_press_enables_dpms = true,
+  },
+  group = {
+    drag_into_group = 2,
+    col = {
+      border_active = "rgba(59595Bff)",
+      border_inactive = "rgba(59595Bff)",
+      border_locked_active = "rgba(59595Bff)",
+      border_locked_inactive = "rgba(59595Bff)",
+    },
+
+    groupbar = {
+      font_size = 0,
+      height = -4,
+      indicator_gap = 0,
+      indicator_height = 2,
+      rounding = 9,
+      rounding_power = 1,
+      gaps_out = 1,
+      col = {
+        active = "rgba(ffffff90)",
+        inactive = "rgba(00000000)",
+        locked_active = "rgba(59595Bff)",
+        locked_inactive = "rgba(00000000)",
+      },
+    },
   },
 })

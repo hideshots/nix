@@ -33,6 +33,7 @@ hl.config({
     cm_enabled = true,
     send_content_type = true,
     cm_auto_hdr = 2,
+    ctm_animation = 0
   },
   cursor = {
     default_monitor = "DP-1",

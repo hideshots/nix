@@ -9,7 +9,7 @@ local startup = {
   "/usr/bin/xembedsniproxy &",
   "swww-daemon --format xrgb",
   "waypaper daemon",
-  "otd-daemon",
+  -- "otd-daemon",
   "vicinae server &",
   "nm-applet &",
   "hyprsunset",

@@ -35,7 +35,7 @@ end
 
 -- Utilities
 bind_all({
-  { "CONTROL + SHIFT + Escape", exec(terminal .. " --class " .. terminal .. "-btop sudo btop") },
+  { "CONTROL + SHIFT + Escape", exec("kitty --class kitty-monitoring --session /home/drama/.config/kitty/sessions/monitoring.session"), },
   { "CONTROL + 0", exec("obs-cmd replay save") },
   { "CONTROL + SHIFT + 0", exec("obs-cmd replay toggle") },
   { "CONTROL + SHIFT + TAB", exec("missioncenter") },
@@ -45,7 +45,7 @@ bind_all({
 })
 
 -- System controls
-bind(main_mod .. " + ALT + L", function()
+bind(main_mod .. " + ALT + S", function()
   hl.timer(function()
     hl.dispatch(hl.dsp.dpms({ action = "toggle" }))
   end, { timeout = 1000, type = "oneshot" })
@@ -80,10 +80,21 @@ bind_all({
   { main_mod .. " + semicolon", exec("vicinae 'vicinae://launch/core/search-emojis?toggle=true'") },
 })
 
+
+hl.bind(main_mod .. " + ALT + G", hl.dsp.group.toggle())
+
+hl.bind(main_mod .. " + ALT + L", hl.dsp.group.next())
+hl.bind(main_mod .. " + ALT + H", hl.dsp.group.prev())
 -- Layout controls
 bind_all({
   { main_mod .. " + C", hl.dsp.window.float({ action = "toggle" }) },
-{ main_mod .. " + ALT + P", hl.dsp.window.pin() },
+  { main_mod .. " + CTRL + C", function()
+    hl.timer(function()
+      hl.dispatch(hl.dsp.window.resize({ x = 1000, y = 640 }))
+      hl.dispatch(hl.dsp.window.center())
+    end, { timeout = 1, type = "oneshot" })
+  end },
+  { main_mod .. " + ALT + P", hl.dsp.window.pin() },
   { main_mod .. " + CTRL + a", hl.dsp.layout("fit all") },
   { main_mod .. " + CTRL + b", hl.dsp.layout("fit tobeg") },
   { main_mod .. " + CTRL + e", hl.dsp.layout("fit toend") },
@@ -127,6 +138,20 @@ for i = 1, 10 do
   workspace_bind(key, i)
 end
 
+ bind(main_mod .. " + SHIFT + ALT + W", function()
+  hl.timer(function()
+    hl.dispatch(hl.dsp.window.resize({ x = 1916, y = 1040 }))
+  end, { timeout = 1, type = "oneshot" })
+end)
+
+bind(main_mod .. " + SHIFT + ALT + M", function()
+  hl.dispatch(hl.dsp.window.float({ action = "set" }))
+  hl.timer(function()
+    hl.dispatch(hl.dsp.window.resize({ x = 5760, y = 1080 }))
+    hl.dispatch(hl.dsp.window.move({ x = 0, y = 0 }))
+  end, { timeout = 1, type = "oneshot" })
+end)
+
 bind_all({
   { main_mod .. " + bracketleft", hl.dsp.focus({ workspace = 11 }) },
   { main_mod .. " + bracketright", hl.dsp.focus({ workspace = 12 }) },
@@ -140,8 +165,9 @@ bind_all({
 bind_all({
   { main_mod .. " + mouse_down", hl.dsp.layout("move +col") },
   { main_mod .. " + mouse_up", hl.dsp.layout("move -col") },
-  { main_mod .. " + SHIFT + mouse_down", exec(zoom_cmd("1.5")) },
-  { main_mod .. " + SHIFT + mouse_up", exec(zoom_cmd("0.5")) },
+  { main_mod .. " + SHIFT + mouse_down", exec(zoom_cmd("0.5")) },
+  { main_mod .. " + SHIFT + mouse_up", exec(zoom_cmd("1.5")) },
+{ main_mod .. " + mouse:274", exec("hyprfreeze -a"), },
 })
 
 mouse_bind(main_mod .. " + mouse:272", hl.dsp.window.drag())
