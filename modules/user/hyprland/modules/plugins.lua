@@ -4,8 +4,6 @@ hl.permission({
   mode = "allow",
 })
 
-hl.bind("SUPER + UP", hl.plugin.hymission.toggle)
-
 if hl.plugin.darkwindow ~= nil then
   hl.plugin.darkwindow.load_shader("blackKey", {
     from = "chromakey",
@@ -24,7 +22,6 @@ hl.config { plugin = {
     border_size_1 = 1,
   },
   dynamic_cursors = {
-
     enabled = true,
     mode = "tilt",
     threshold = 2,
@@ -40,7 +37,7 @@ hl.config { plugin = {
       full = 85,
     },
     shake = {
-      enabled = true,
+      enabled = false,
       threshold = 6.0,
       base = 1.0,
       speed = 3.0,

@@ -40,7 +40,7 @@ local layer_rules = {
   { name = "quickshell-control-center-footer-blur", namespace = "^quickshell:control-center-footer$", ignore_alpha = blur_cutoff.soft },
   { name = "quickshell-desktop-widgets-blur", namespace = "^quickshell:desktop-widget-(calendar|weather):.*", ignore_alpha = blur_cutoff.none },
   { name = "quickshell-menu-blur", namespace = "^quickshell:menu$", ignore_alpha = blur_cutoff.soft, blur_popups = true },
-  { name = "quickshell-notification-popup-backdrop-blur", namespace = "^quickshell:notification-popup-backdrop$", ignore_alpha = blur_cutoff.none, blur_popups = true, no_screen_share = true },
+  { name = "quickshell-notification-popup-backdrop-blur", namespace = "^quickshell:notification-popup-backdrop$", ignore_alpha = blur_cutoff.none, blur_popups = true, no_screen_share = false },
 }
 
 for _, rule in ipairs(layer_rules) do
@@ -60,5 +60,19 @@ layer_effect({
   ignore_alpha = blur_cutoff.soft,
 })
 
-hl.window_rule({ name = "quickshell-alert", match = { class = "^org\\.quickshell$", title = "^Alert$" }, float = true, center = true, rounding = 20, rounding_power = 3, no_shadow = true })
+hl.window_rule({
+  name = "quickshell-alert",
+  match = {
+    class = "^org\\.quickshell$",
+    title = "^Alert$",
+  },
+
+  float = true,
+  center = true,
+  rounding = 20,
+  rounding_power = 3,
+  no_shadow = true,
+  animation = "popin 0%",
+})
+
 hl.window_rule({ name = "quickshell-settings", match = { class = "^org\\.quickshell$", title = "^Settings$" }, float = true, rounding = 20, rounding_power = 3 })

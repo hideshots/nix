@@ -1,6 +1,15 @@
 local terminal = Config.terminal
 
-hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({
+    workspace = "w[tv1]s[false]",
+    gaps_in = 0,
+    gaps_out = {
+        top = 0,
+        right = 0,
+        bottom = 1,
+        left = 0,
+    },
+})
 
 hl.window_rule({
   name = "no-gaps-wtv1",
@@ -20,6 +29,25 @@ hl.window_rule({
   rounding = 5,
   no_shadow = 1,
   border_size = 0,
+})
+
+hl.window_rule({
+    name = "flstudio-helper",
+    match = {
+        class = "fl64.exe",
+        title = "^$",
+    },
+    float = true,
+    workspace = "special:flhelper silent",
+})
+
+hl.window_rule({
+    name = "flstudio-main",
+    match = {
+        class = "^fl64%.exe$",
+        title = "^FL Studio 2026$",
+    },
+    suppress_event = "fullscreen maximize",
 })
 
 hl.window_rule({
@@ -185,9 +213,9 @@ hl.window_rule({
 })
 
 hl.window_rule({
-  name = "term-btop",
+  name = "kitty-monitoring",
   match = {
-    class = "^(" .. terminal .. "-btop)$",
+    class = "kitty-monitoring",
   },
   float = true,
   size = { "70%", "90%" },
@@ -210,7 +238,7 @@ hl.layer_rule({
   name = "vicinae-blur",
   match = { namespace = "vicinae" },
   blur = true,
-  ignore_alpha = 0,
+  ignore_alpha = 0.2,
 })
 
 hl.window_rule({
@@ -251,6 +279,27 @@ hl.window_rule({
   float = true,
   size = { "60%", "60%" },
   center = true,
+})
+
+hl.window_rule({
+  name = "dolphin",
+  match = {
+    class = "org.kde.dolphin|org.kde.ark",
+  },
+  float = true,
+  size = { "60%", "60%" },
+  center = true,
+})
+
+hl.window_rule({
+  name = "ark extracting dialog",
+  match = {
+    class = "org.kde.ark",
+    title = "^Extracting.*",
+  },
+  float = true,
+  size = {"700", "169"},
+move = { "(monitor_w-700)/2", "40" },
 })
 
 hl.window_rule({
