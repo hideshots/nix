@@ -11,7 +11,8 @@ wrap = "yes"
 tab_size = 2
 max_width = 9200
 max_height = 9200
-image_quality = 75
+image_quality = 70
+cache_dir = "~/.cache/yazi"
 
 [opener]
 edit = [

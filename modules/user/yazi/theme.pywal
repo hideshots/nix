@@ -1,0 +1,23 @@
+[icon]
+prepend_dirs = [
+  {{ name = "Desktop",    text = "", fg = "{color2}" }},
+  {{ name = "Music",      text = "", fg = "{color2}" }},
+  {{ name = "Videos",     text = "", fg = "{color2}" }},
+  {{ name = "Documents",  text = "󰈙", fg = "{color2}" }},
+  {{ name = "Downloads",  text = "", fg = "{color2}" }},
+  {{ name = "Pictures",   text = "", fg = "{color2}" }},
+  {{ name = ".npm",       text = "", fg = "{color2}" }},
+  {{ name = ".config",    text = "", fg = "{color2}" }},
+  {{ name = ".git",       text = "", fg = "{color2}" }},
+] 
+
+exts = [
+{{ name = "png",  text = "", fg = "{color2}" }},
+{{ name = "jpg",  text = "", fg = "{color2}" }},
+{{ name = "jpeg", text = "", fg = "{color2}" }},
+{{ name = "webp", text = "", fg = "{color2}" }},
+{{ name = "gif",  text = "", fg = "{color2}" }},
+]
+prepend_conds = [
+  {{ if = "dir", text = "", fg = "{color3}" }}
+]
