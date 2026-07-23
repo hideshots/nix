@@ -36,6 +36,7 @@ in {
     "kitty".source = dot "modules/user/kitty";
     "nvim".source = dot "modules/user/neovim";
     "yazi".source = dot "modules/user/yazi";
+    "wal/templates/yazi.toml".source = dot "modules/user/yazi/theme.pywal";
     "hypr".source = dot "modules/user/hyprland";
     "sway/config".source = dot "modules/user/sway/config";
     "i3status".source = dot "modules/user/sway/i3status";
