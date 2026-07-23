@@ -162,6 +162,34 @@ bind_all({
 })
 
 -- Mouse bindings
+hl.bind("SUPER + mouse:276", function()
+    local win = hl.get_active_window()
+    local mon = win and win.monitor
+    if not win or not mon then
+        return
+    end
+
+    hl.dispatch(hl.dsp.window.move({
+        x = mon.x + (mon.width - win.size.x) / 2,
+        y = win.at.y,
+        window = win
+    }))
+end)
+
+hl.bind("SUPER + mouse:275", function()
+    local win = hl.get_active_window()
+    local mon = win and win.monitor
+    if not win or not mon then
+        return
+    end
+
+    hl.dispatch(hl.dsp.window.move({
+        x = win.at.x,
+        y = mon.y + (mon.height - win.size.y) / 2,
+        window = win
+    }))
+end)
+
 bind_all({
   { main_mod .. " + mouse_down", hl.dsp.layout("move +col") },
   { main_mod .. " + mouse_up", hl.dsp.layout("move -col") },
@@ -190,3 +218,6 @@ bind("XF86AudioNext", exec("playerctl next"), { locked = true })
 bind("XF86AudioPrev", exec("playerctl previous"), { locked = true })
 bind("XF86AudioPause", exec("playerctl play-pause"), { locked = true })
 bind("XF86AudioPlay", exec("playerctl play-pause"), { locked = true })
+
+-- wl-kbptr
+bind(main_mod .. " + PAGE_UP", exec("wl-kbptr -o modes=floating,click -o mode_floating.source=detect"))
