@@ -20,6 +20,10 @@ keymap("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
 keymap("v", "<", "<gv", { desc = "Decrease indent" })
 keymap("v", ">", ">gv", { desc = "Increase indent" })
 
+-- Comments
+keymap("n", "<leader>/", "gcc", { remap = true, desc = "Toggle comment" })
+keymap("v", "<leader>/", "gc", { remap = true, desc = "Toggle comment" })
+
 -- Move text up and down
 keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move text down" })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move text up" })

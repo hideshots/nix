@@ -55,21 +55,13 @@ return {
         },
       },
     })
-
+    
+    pcall(require("telescope").load_extension, "fzf")
   end,
 
   keys = {
-    {
-      "<leader>jk",
-      function()
-        require("telescope.builtin").find_files({
-          find_command = { "rg", "--files", "--hidden", "-g", "!.git" }
-        })
-      end,
-      desc = "Find Files"
-    },
-    { "<leader>ff", "<cmd>Telescope find_files<cr>",            desc = "Find Files" },
-    { "<leader>fg", "<cmd>Telescope live_grep<cr>",             desc = "Live Grep" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
     { "<leader>fd", "<cmd>Telescope diagnostics<cr>",           desc = "Diagnostics" },
     { "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>",  desc = "Document Symbols" },
     { "<leader>ws", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace Symbols" },

@@ -17,9 +17,7 @@ vim.o.sidescrolloff = 8
 vim.o.mouse = "a"
 vim.o.whichwrap = "bs<>[]hl"
 
-vim.o.termguicolors = true
 vim.o.background = "dark"
-vim.o.errorbells = false
 
 -- Leader key
 vim.g.mapleader = " "

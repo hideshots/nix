@@ -38,15 +38,9 @@ return {
         },
       },
     })
-
-    vim.keymap.set("n", "<leader>sv", "<cmd>Markview splitToggle<cr>", {
-      desc = "Toggle splitview",
-      buffer = 0,
-    })
-
-    vim.keymap.set("n", "<leader>sh", "<cmd>Markview hybridToggle<cr>", {
-      desc = "Toggle hybrid mode",
-      buffer = 0,
-    })
   end,
+  keys = {
+    { "<leader>sv", "<cmd>Markview splitToggle<cr>", desc = "Toggle splitview", ft = { "markdown", "markdown_inline", "gitcommit" } },
+    { "<leader>sh", "<cmd>Markview hybridToggle<cr>", desc = "Toggle hybrid mode", ft = { "markdown", "markdown_inline", "gitcommit" } },
+  },
 }

@@ -56,7 +56,7 @@ return {
   end,
   
   keys = {
-    { "<leader>cp", "<cmd>CccPick<cr>", desc = "Color picker" },
-    { "<leader>ch", "<cmd>CccHighlighterToggle<cr>", desc = "Hide Color picker" },
+    { "<leader>cc", "<cmd>CccPick<cr>", desc = "Color picker" },
+    { "<leader>ch", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle color highlighter" },
   },
 }
