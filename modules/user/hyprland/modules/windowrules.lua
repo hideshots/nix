@@ -6,7 +6,7 @@ hl.workspace_rule({
     gaps_out = {
         top = 0,
         right = 0,
-        bottom = 1,
+        bottom = 0,
         left = 0,
     },
 })
@@ -105,6 +105,12 @@ hl.config({
     fullscreen_on_one_column = true,
     direction = "right",
   },
+})
+
+hl.window_rule({
+  name = "mayhem-noblur",
+  match = { class = "^(mayhem-loader|mayhem-menu|mayhem)$" },
+  tag = "+hyprglass_disabled",
 })
 
 hl.window_rule({
@@ -268,6 +274,16 @@ hl.window_rule({
   },
   float = true,
   size = { "monitor_w*0.6", "monitor_h*0.6" },
+  center = true,
+})
+
+hl.window_rule({
+  name = "term-obsidian",
+  match = {
+    class = "^(" .. terminal .. "-obsidian)$",
+  },
+  float = true,
+  size = { "monitor_w*0.5", "monitor_h*0.9" },
   center = true,
 })
 

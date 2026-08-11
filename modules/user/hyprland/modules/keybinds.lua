@@ -51,8 +51,9 @@ bind(main_mod .. " + ALT + S", function()
   end, { timeout = 1000, type = "oneshot" })
 end)
 
--- Screenshots
+-- Screenshots & OSR
 bind_all({
+  { main_mod .. " + SHIFT + T", exec("~/dotfiles/modules/user/scripts/osr.sh") },
   { "Print", exec(screenshot_cmd("region", "tee \"$file\"")) },
   { "SHIFT + Print", exec(screenshot_cmd("output", "tee \"$file\"")) },
   {
@@ -71,6 +72,7 @@ bind_all({
 -- Apps
 bind_all({
   { main_mod .. " + E", exec("kitty --class " .. terminal .. "-yazi yazi") },
+  { main_mod .. " + ALT + O", exec("kitty --class " .. terminal .. "-obsidian sh -c 'cd /mnt/hdd/Notes/Personal && nvim +\"autocmd BufEnter *.md ++once normal! G\" +ObsidianToday' & sleep 0.5; hyprctl dispatch setfloating") },
   { main_mod .. " + Q", exec(terminal) },
   { main_mod .. " + R", exec(menu) },
   { main_mod .. " + SHIFT + E", exec(file_manager) },
@@ -193,8 +195,8 @@ end)
 bind_all({
   { main_mod .. " + mouse_down", hl.dsp.layout("move +col") },
   { main_mod .. " + mouse_up", hl.dsp.layout("move -col") },
-  { main_mod .. " + SHIFT + mouse_down", exec(zoom_cmd("0.5")) },
-  { main_mod .. " + SHIFT + mouse_up", exec(zoom_cmd("1.5")) },
+  { main_mod .. " + SHIFT + mouse_down", exec(zoom_cmd("1.5")) },
+  { main_mod .. " + SHIFT + mouse_up", exec(zoom_cmd("0.5")) },
 { main_mod .. " + mouse:274", exec("hyprfreeze -a"), },
 })
 

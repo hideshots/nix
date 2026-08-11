@@ -1,7 +1,9 @@
 local startup = {
   "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
   "systemctl --user start hyprland-session.service",
+  "systemctl --user start hyprpolkitagent",
   "gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"",
+  "hyprctl plugin load /home/drama/git/hyprglass/hyprglass.so",
   "wl-paste --type image --watch cliphist store",
   "wl-paste --type text --watch cliphist store",
   "easyeffects --gapplication-service",

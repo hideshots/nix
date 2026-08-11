@@ -17,7 +17,7 @@ hl.config({
       xray = false,
       popups = true,
       popups_ignorealpha = 0.2,
-      glass_lensing = 20,
+      glass_lensing = 40,
       glass_edge_softness = 0,
       glass_dimming = 0.0,
       glass_tint_strength = 0.0,

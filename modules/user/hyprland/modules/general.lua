@@ -23,15 +23,11 @@ hl.config({
       color = "rgba(000000a3)",
       color_inactive = "rgba(0000009f)",
     },
-    motion_blur = {
-      enabled = true,
-      samples = 32
-    },
     blur = {
       enabled = true,
       ignore_opacity = true,
       special = false,
-      -- noise = 0.02,
+      noise = 0.0,
       size = 2,
       passes = 2,
       xray = false,
@@ -48,6 +44,7 @@ hl.config({
     new_status = "master",
   },
   misc = {
+    layers_hog_keyboard_focus = false,
     key_press_enables_dpms = true,
   },
   group = {

@@ -6,7 +6,6 @@ hl.monitor({
   bitdepth = 10,
   supports_hdr = 0,
   supports_wide_color = 1,
-  disabled = false,
 })
 
 hl.monitor({
@@ -25,8 +24,8 @@ hl.monitor({
   disabled = false,
 })
 
-hl.monitor({ output = "Virtual-1", mode = "1920x1048@540", position = "0x0", scale = 1, disabled = true})
-hl.monitor({ output = "WAYLAND-1", mode = "preferred", position = "auto", scale = 1, disabled = true})
+hl.monitor({ output = "Virtual-1", mode = "1920x1048@540", position = "0x0", scale = 1, disabled = false})
+hl.monitor({ output = "WAYLAND-1", mode = "preferred", position = "auto", scale = 1, disabled = false})
 
 hl.config({
   render = {
