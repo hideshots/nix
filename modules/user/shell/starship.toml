@@ -11,7 +11,6 @@ $character
 """
 
 right_format = """
-$nodejs\
 $git_branch
 """
 
@@ -39,8 +38,8 @@ truncation_symbol = ""
 
 [time]
 disabled = false
-time_format = "%T"
-format = '[\[$time\]](bold white)'
+time_format = "%I:%M:%S %p"
+format = '[$time](bold white)'
 
 [character]
 success_symbol = "[>](bold white) [\\$](green)"
@@ -55,7 +54,7 @@ format = "[$symbol$version]($style) "
 [git_branch]
 symbol = ""
 style = "bold white"
-format = '[\[$branch\]]($style)'
+format = '[$branch]($style)'
 truncation_length = 999
 truncation_symbol = ""
 
