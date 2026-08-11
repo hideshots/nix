@@ -13,6 +13,12 @@ return {
   config = function()
     require("telescope").setup({
       defaults = {
+        -- Telescope 0.1.8 calls removed nvim-treesitter.configs APIs.
+        preview = {
+          treesitter = {
+            enable = false,
+          },
+        },
         border = {
           prompt = { 1, 1, 1, 1 },
           results = { 1, 1, 1, 1 },

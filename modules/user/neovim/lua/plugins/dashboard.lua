@@ -55,6 +55,16 @@ return {
             key_format = " [%s]",
             action = "ene | startinsert",
           },
+          {
+            icon = "",
+            icon_hl = "DashboardIcon",
+            desc = "Obsidian",
+            desc_hl = "DashboardDesc",
+            key = "o",
+            key_hl = "DashboardKey",
+            key_format = " [%s]",
+            action = "ObsidianQuickSwitch",
+          },
         },
         footer = {
           "",
