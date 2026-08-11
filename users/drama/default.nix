@@ -38,6 +38,7 @@ in {
     "yazi".source = dot "modules/user/yazi";
     "wal/templates/yazi.toml".source = dot "modules/user/yazi/theme.pywal";
     "hypr".source = dot "modules/user/hyprland";
+    "i3".source = dot "modules/user/i3";
     "sway/config".source = dot "modules/user/sway/config";
     "i3status".source = dot "modules/user/sway/i3status";
     "quickshell/default".source = dot "modules/user/quickshell/Callista";
