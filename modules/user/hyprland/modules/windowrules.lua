@@ -11,15 +11,15 @@ hl.workspace_rule({
     },
 })
 
-hl.window_rule({
-  name = "no-gaps-wtv1",
-  match = {
-    float = false,
-    workspace = "w[tv1]s[false]",
-  },
-  -- border_size = 0,
-  rounding = 10,
-})
+-- hl.window_rule({
+--   name = "no-gaps-wtv1",
+--   match = {
+--     float = false,
+--     workspace = "w[tv1]s[false]",
+--   },
+--   -- border_size = 0,
+--   rounding = 10,
+-- })
 
 hl.window_rule({
   name = "pinned",

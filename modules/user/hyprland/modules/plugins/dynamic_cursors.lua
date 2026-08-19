@@ -14,7 +14,7 @@ return {
     full = 85,
   },
   shake = {
-    enabled = true,
+    enabled = false,
     threshold = 5.0,
     base = 1.0,
     speed = 3.0,

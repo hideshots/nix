@@ -26,9 +26,9 @@ local buttons = {
   },
 }
 
-for _, button in ipairs(buttons) do
-  hl.plugin.hyprbars.add_button(button)
-end
+-- for _, button in ipairs(buttons) do
+--   hl.plugin.hyprbars.add_button(button)
+-- end
 
 return {
   enabled = true,

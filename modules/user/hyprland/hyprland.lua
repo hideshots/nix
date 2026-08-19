@@ -1,4 +1,4 @@
-local terminal = "kitty"
+local terminal = "ghostty"
 local file_manager = "dolphin"
 local menu = "vicinae 'vicinae://toggle'"
 local main_mod = "SUPER"

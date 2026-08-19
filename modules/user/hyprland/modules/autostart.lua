@@ -1,5 +1,6 @@
 local startup = {
-  "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
+  "hyprctl setcursor macOS 24",
+  "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XCURSOR_THEME XCURSOR_SIZE",
   "systemctl --user start hyprland-session.service",
   "systemctl --user start hyprpolkitagent",
   "gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"",

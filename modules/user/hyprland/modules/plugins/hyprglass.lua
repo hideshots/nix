@@ -75,13 +75,15 @@ local presets = {
       adaptive_boost = 0.3,
     },
   },
+
   clear = {
     inherits = "default",
     glass_opacity = 1.0,
-    blur_strength = 0.9,
+    blur_strength = 0.25,
     blur_iterations = 2,
-    refraction_strength = 1.6,
-    chromatic_aberration = 0.05,
+    refraction_strength = 1.0,
+    chromatic_aberration = 0.02,
+    s_curve = 0.0,
     -- fresnel_strength = 1.3,
     -- specular_strength = 1.7,
     edge_thickness = 0.08,
@@ -106,6 +108,29 @@ local presets = {
       adaptive_boost = 0.0,
     },
   },
+
+  clear_s_curve = {
+    inherits = "clear",
+    s_curve = 1.0,
+  },
+
+  notification = {
+    inherits = "clear",
+    blur_strength = 1,
+    blur_iterations = 1,
+    lens_distortion = 9.0,
+    s_curve = 1.0,
+    dark = {
+      brightness = 1.0,
+      contrast = 1.0,
+      saturation = 1.2,
+      vibrancy = 1.0,
+      vibrancy_darkness = 0.0,
+      adaptive_dim = 0.2,
+      adaptive_boost = 0.0,
+    },
+  },
+
   darken = {
     inherits = "default",
     blur_strength = 1,
@@ -164,7 +189,7 @@ local layers = {
   },
   {
     name = "quickshell:control-center-tile-4x1",
-    preset = "clear",
+    preset = "clear_s_curve",
     mask_threshold = 0.1,
     rounding = 25,
   },
@@ -200,6 +225,18 @@ local layers = {
   },
   {
     name = "quickshell:notification-popup-backdrop",
+    preset = "notification",
+    mask_threshold = 0.01,
+    rounding = 15,
+  },
+  {
+    name = "quickshell:toggle-knob-backdrop",
+    preset = "clear",
+    mask_threshold = 0.01,
+    rounding = 15,
+  },
+  {
+    name = "quickshell:toggle-slider-backdrop",
     preset = "clear",
     mask_threshold = 0.01,
     rounding = 15,
@@ -233,6 +270,8 @@ local function setup()
   hg.preset("default", presets.default)
   hg.preset("menus", presets.menus)
   hg.preset("clear", presets.clear)
+  hg.preset("clear_s_curve", presets.clear_s_curve)
+  hg.preset("notification", presets.notification)
   hg.preset("darken", presets.darken)
 
   for _, layer in ipairs(layers) do
@@ -248,8 +287,8 @@ local function setup()
 
   -- Per-window rules
   hl.window_rule({
-    name = "kitty-hyprglass",
-    match = { class = "^kitty(-.*)?$" },
+    name = "terminal",
+    match = { class = "^(kitty(-.*)?|com\\.mitchellh\\.ghostty|ghostty(-.*)?)$" },
     tag = "+hyprglass_preset_darken",
   })
 end
