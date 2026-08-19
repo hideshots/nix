@@ -1,0 +1,83 @@
+config-file = ?~/.cache/wal/colors-ghostty.conf
+
+font-family = "SF Pro Mono"
+font-size = 14
+
+shell-integration = detect
+shell-integration-features = no-cursor
+
+cursor-style = bar
+custom-shader = shaders/cursor_tail.glsl
+
+confirm-close-surface = false
+window-decoration = true
+scrollback-limit = 10000
+bell-features = no-audio
+
+background-opacity = 0.0
+window-padding-x = 4
+window-padding-y = 4
+
+background = #000000
+foreground = #c1c1c1
+selection-background = #c1c1c1
+selection-foreground = #000000
+cursor-color = #c1c1c1
+
+palette = 0=#000000
+palette = 1=#cc0403
+palette = 2=#19cb00
+palette = 3=#cecb00
+palette = 4=#888888
+palette = 5=#999999
+palette = 6=#aaaaaa
+palette = 7=#c1c1c1
+palette = 8=#333333
+palette = 9=#f40d17
+palette = 10=#23fd00
+palette = 11=#fffd00
+palette = 12=#888888
+palette = 13=#999999
+palette = 14=#aaaaaa
+palette = 15=#c1c1c1
+palette = 16=#aaaaaa
+palette = 17=#444444
+palette = 18=#121212
+palette = 19=#222222
+palette = 20=#999999
+palette = 21=#999999
+
+# Tmux-like Keybindings (Leader: Ctrl+B)
+
+# Panes (Splits)
+keybind = ctrl+b>shift+5=new_split:right
+keybind = ctrl+b>shift+'=new_split:down
+keybind = ctrl+b>x=close_surface
+keybind = ctrl+b>z=toggle_split_zoom
+keybind = ctrl+b>o=goto_split:next
+
+# Navigation (top/bottom instead of up/down)
+keybind = ctrl+b>left=goto_split:left
+keybind = ctrl+b>right=goto_split:right
+keybind = ctrl+b>up=goto_split:top
+keybind = ctrl+b>down=goto_split:bottom
+keybind = ctrl+b>h=goto_split:left
+keybind = ctrl+b>l=goto_split:right
+keybind = ctrl+b>k=goto_split:top
+keybind = ctrl+b>j=goto_split:bottom
+
+# Tabs
+keybind = ctrl+b>c=new_tab
+keybind = ctrl+b>n=next_tab
+keybind = ctrl+b>p=previous_tab
+keybind = ctrl+b>comma=prompt_tab_title
+keybind = ctrl+b>shift+7=close_tab
+keybind = ctrl+b>1=goto_tab:1
+keybind = ctrl+b>2=goto_tab:2
+keybind = ctrl+b>3=goto_tab:3
+keybind = ctrl+b>4=goto_tab:4
+keybind = ctrl+b>5=goto_tab:5
+keybind = ctrl+b>6=goto_tab:6
+keybind = ctrl+b>7=goto_tab:7
+keybind = ctrl+b>8=goto_tab:8
+keybind = ctrl+b>9=goto_tab:9
