@@ -34,9 +34,11 @@ in {
     "starship.toml".source = dot "modules/user/shell/starship.toml";
     "fastfetch".source = dot "modules/user/fastfetch";
     "kitty".source = dot "modules/user/kitty";
+    "ghostty".source = dot "modules/user/ghostty";
     "nvim".source = dot "modules/user/neovim";
     "yazi".source = dot "modules/user/yazi";
     "wal/templates/yazi.toml".source = dot "modules/user/yazi/theme.pywal";
+    "wal/templates/colors-ghostty.conf".source = dot "modules/user/ghostty/colors-ghostty.conf";
     "hypr".source = dot "modules/user/hyprland";
     "i3".source = dot "modules/user/i3";
     "sway/config".source = dot "modules/user/sway/config";
