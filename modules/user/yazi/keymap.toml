@@ -15,6 +15,7 @@ prepend_keymap = [
   { on = ["g","a"],  run = "cd ~/.cache",                               desc = ".cache" },
   { on = ["g","L"],  run = "cd ~/.local",                               desc = ".local" },
   { on = ["g","i"],  run = "cd ~/git",                                   desc = "Linux" },
+  { on = ["g","I"],  run = "cd ~/.pi",                                   desc = "pi" },
   { on = ["g","H"],  run = "cd /mnt/hdd",                                desc = "hdd" },
   { on = ["g","S"],  run = "cd /mnt/ssd",                                desc = "ssd" },
   { on = ["g","D"],  run = "cd /mnt/dev",                                desc = "dev" },
