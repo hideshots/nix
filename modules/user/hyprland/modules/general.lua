@@ -1,7 +1,7 @@
 hl.config({
   general = {
     gaps_in = 3,
-    gaps_out = { top = 5, right = 10, bottom = 10, left = 10 },
+    gaps_out = { top = 0, right = 5, bottom = 5, left = 5 },
     border_size = 1,
     col = {
       active_border = "rgba(59595Bff)",
@@ -42,10 +42,6 @@ hl.config({
   },
   master = {
     new_status = "master",
-  },
-  misc = {
-    layers_hog_keyboard_focus = false,
-    key_press_enables_dpms = true,
   },
   group = {
     drag_into_group = 2,

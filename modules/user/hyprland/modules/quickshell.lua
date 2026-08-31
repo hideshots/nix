@@ -9,7 +9,7 @@ hl.bind(main_mod .. " + A", sh("qs ipc call shell toggleControlCenter"))
 hl.bind(main_mod .. " + N", sh("qs ipc call shell toggleNotificationCenter"))
 hl.bind(main_mod .. " + G", sh("qs ipc call shell toggleAudioMixer"))
 hl.bind(main_mod .. " + B", sh("qs ipc --any-display call shell toggleBarVisibility"))
-hl.bind(main_mod .. " + SHIFT + B", sh("qs ipc --any-display call shell toggleWidgetsVisibility; qs ipc --any-display call shell toggleBarVisibility"))
+hl.bind(main_mod .. " + SHIFT + B", sh("qs ipc call shell toggleMenuBarBlur; qs ipc --any-display call shell toggleWidgetsVisibility; qs ipc --any-display call shell toggleBarVisibility"))
 
 hl.window_rule({
   name = "quickshell-alert",

@@ -17,7 +17,7 @@ local startup = {
   "nm-applet &",
   "hyprsunset",
   "windscribe-cli connect &",
-  "spotify --enable-gpu-rasterization --enable-zero-copy --enable-gpu-compositing --enable-native-gpu-memory-buffers --enable-oop-rasterization --enable-features=UseSkiaRenderer --ozone-platform=wayland --disable-gpu-sandbox --enable-blink-features=MiddleClickAutoscroll",
+  "spotify --disable-gpu --ozone-platform=wayland --enable-blink-features=MiddleClickAutoscroll",
   "Telegram -startintray &",
   -- "waypaper --restore",
   "quickshell",

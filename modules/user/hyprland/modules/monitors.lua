@@ -2,10 +2,9 @@ hl.monitor({
   output = "DP-1",
   mode = "1920x1080@239.96",
   position = "1920x0",
+  vrr = 0,
   scale = 1,
   bitdepth = 10,
-  supports_hdr = 0,
-  supports_wide_color = 1,
 })
 
 hl.monitor({
@@ -29,16 +28,24 @@ hl.monitor({ output = "WAYLAND-1", mode = "preferred", position = "auto", scale 
 
 hl.config({
   render = {
+    send_content_type = false,
+    direct_scanout = 0,
+
     cm_enabled = true,
-    send_content_type = true,
-    cm_auto_hdr = 2,
-    ctm_animation = 0
+    cm_auto_hdr = 0,
+    ctm_animation = 0,
   },
   cursor = {
     default_monitor = "DP-1",
-    no_hardware_cursors = true,
+    no_hardware_cursors = 0,
+    use_cpu_buffer = 2,
     no_break_fs_vrr = 1,
+    min_refresh_rate = 48,
     no_warps = false,
+  },
+  misc = {
+    layers_hog_keyboard_focus = false,
+    key_press_enables_dpms = true,
   },
 })
 

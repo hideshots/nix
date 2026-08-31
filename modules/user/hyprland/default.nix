@@ -16,6 +16,8 @@ in {
     hyprsunset
     hyprfreeze
     hypridle
+    wlrctl
+    ydotool
 
     # Screenshots / clipboard / wallpapers
     wl-clipboard

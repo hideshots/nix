@@ -39,8 +39,9 @@ bind_all({
   { "CONTROL + 0", exec("obs-cmd replay save") },
   { "CONTROL + SHIFT + 0", exec("obs-cmd replay toggle") },
   { "CONTROL + SHIFT + TAB", exec("missioncenter") },
-  { "HOME", exec("hyprfreeze -a") },
+  -- { "HOME", exec("hyprfreeze -a") },
   { main_mod .. " + SHIFT + C", exec("hyprpicker -a") },
+  { main_mod .. " + slash", exec("/home/drama/.local/bin/madlion-gamepad toggle-gamepad") },
   { main_mod .. " + SHIFT + M", hl.dsp.workspace.toggle_special("rmpc") },
 })
 
@@ -90,18 +91,18 @@ hl.bind(main_mod .. " + ALT + H", hl.dsp.group.prev())
 -- Layout controls
 bind_all({
   { main_mod .. " + C", hl.dsp.window.float({ action = "toggle" }) },
-  { main_mod .. " + CTRL + C", function()
+  { main_mod .. " + ALT + C", function()
     hl.timer(function()
       hl.dispatch(hl.dsp.window.resize({ x = 1000, y = 640 }))
       hl.dispatch(hl.dsp.window.center())
     end, { timeout = 1, type = "oneshot" })
   end },
   { main_mod .. " + ALT + P", hl.dsp.window.pin() },
-  { main_mod .. " + CTRL + a", hl.dsp.layout("fit all") },
-  { main_mod .. " + CTRL + b", hl.dsp.layout("fit tobeg") },
-  { main_mod .. " + CTRL + e", hl.dsp.layout("fit toend") },
-  { main_mod .. " + CTRL + f", hl.dsp.layout("fit active") },
-  { main_mod .. " + CTRL + v", hl.dsp.layout("fit visible") },
+  { main_mod .. " + ALT + a", hl.dsp.layout("fit all") },
+  { main_mod .. " + ALT + b", hl.dsp.layout("fit tobeg") },
+  { main_mod .. " + ALT + e", hl.dsp.layout("fit toend") },
+  { main_mod .. " + ALT + f", hl.dsp.layout("fit active") },
+  { main_mod .. " + ALT + v", hl.dsp.layout("fit visible") },
   { main_mod .. " + T", hl.dsp.layout("promote") },
   { main_mod .. " + D", hl.dsp.window.cycle_next({ floating = true }) },
   { main_mod .. " + F", hl.dsp.window.fullscreen() },
@@ -161,6 +162,8 @@ bind_all({
   { main_mod .. " + SHIFT + bracketright", hl.dsp.window.move({ workspace = 12 }) },
   { main_mod .. " + S", hl.dsp.workspace.toggle_special("magic") },
   { main_mod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }) },
+  { main_mod .. " + Escape", hl.dsp.workspace.toggle_special("escape") },
+  { main_mod .. " + SHIFT + Escape", hl.dsp.window.move({ workspace = "special:escape" }) },
 })
 
 -- Mouse bindings
@@ -222,4 +225,39 @@ bind("XF86AudioPause", exec("playerctl play-pause"), { locked = true })
 bind("XF86AudioPlay", exec("playerctl play-pause"), { locked = true })
 
 -- wl-kbptr
-bind(main_mod .. " + PAGE_UP", exec("wl-kbptr -o modes=floating,click -o mode_floating.source=detect"))
+local function kbptr_cmd(args)
+  return string.format([[hyprctl dispatch "hl.dsp.submap('reset')"; wl-kbptr %s; hyprctl dispatch "hl.dsp.submap('cursor')"]], args)
+end
+
+-- Enter cursor submap and wake up analog polling:
+bind(main_mod .. " + Control_L", function()
+  hl.exec_cmd("/home/drama/.local/bin/madlion-mouse enable")
+  hl.dispatch(hl.dsp.submap("cursor"))
+end)
+
+-- Cursor submap:
+hl.define_submap("cursor", function()
+  -- Wl-kbptr floating jump utilities
+  bind("a", exec(kbptr_cmd("-o modes=floating,click -o mode_floating.source=detect")))
+  bind("Space", exec(kbptr_cmd("-o modes=floating -o mode_floating.source=detect")))
+
+  -- Drop / release any active drag
+  bind("v", exec("/home/drama/.local/bin/madlion-mouse release"))
+
+  -- Swallow analog keys so they don't type characters into active windows
+  local swallow_keys = { "u", "j", "i" ,"y", "h", "k", "e", "r", "o", "l", "w", "t", "f", "s", "d", "v", "b" }
+  for _, k in ipairs(swallow_keys) do
+    bind(k, function() end)
+    bind("SHIFT + " .. k, function() end)
+    bind("CTRL + " .. k, function() end)
+  end
+
+  -- Exit submap: put daemon in standby and release all buttons
+  local function exit_cursor()
+    hl.exec_cmd("/home/drama/.local/bin/madlion-mouse disable")
+    hl.dispatch(hl.dsp.submap("reset"))
+  end
+
+  bind("Escape", exit_cursor)
+  bind("Control_L", exit_cursor)
+end)
