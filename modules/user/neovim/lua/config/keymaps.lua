@@ -13,8 +13,8 @@ keymap("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 keymap("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 
 -- Buffer navigation
-keymap("n", "<S-h>", ":bprevious<CR>", { desc = "Previous buffer" })
-keymap("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
+keymap("n", "<S-h>", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
+keymap("n", "<S-l>", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
 
 -- Better indenting
 keymap("v", "<", "<gv", { desc = "Decrease indent" })

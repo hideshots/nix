@@ -3,17 +3,17 @@ return {
   event = "BufRead",
   config = function()
     local ccc = require("ccc")
-    
+
     ccc.setup({
       win_opts = {
         border = "none",
       },
-      
+
       inputs = {
         ccc.input.rgb,
         ccc.input.hsl,
       },
-      
+
       outputs = {
         ccc.output.hex,
         ccc.output.css_rgb,
@@ -21,19 +21,19 @@ return {
         ccc.output.float,
         ccc.output.hex_short,
       },
-      
+
       virtual_symbol = "  ",
-      
+
       highlighter = {
         auto_enable = true,
       },
-      
+
       convert = {
-        { ccc.picker.hex, ccc.output.css_rgb },
+        { ccc.picker.hex,     ccc.output.css_rgb },
         { ccc.picker.css_rgb, ccc.output.css_hsl },
         { ccc.picker.css_hsl, ccc.output.hex },
       },
-      
+
       recognize = {
         input = false,
         output = false,
@@ -50,13 +50,13 @@ return {
         },
       },
     })
-    
+
     ccc.output.hex.setup({ uppercase = false })
     ccc.output.hex_short.setup({ uppercase = false })
   end,
-  
+
   keys = {
-    { "<leader>cc", "<cmd>CccPick<cr>", desc = "Color picker" },
+    { "<leader>cc", "<cmd>CccPick<cr>",              desc = "Color picker" },
     { "<leader>ch", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle color highlighter" },
   },
 }

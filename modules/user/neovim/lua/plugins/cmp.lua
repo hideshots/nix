@@ -69,7 +69,8 @@ return {
           end
 
           if not loaded then
-            vim.notify("Minuet skipped: qwen2.5-coder-3b-instruct is not loaded", vim.log.levels.WARN, { title = "Minuet" })
+            vim.notify("Minuet skipped: qwen2.5-coder-3b-instruct is not loaded", vim.log.levels.WARN,
+              { title = "Minuet" })
             return
           end
 
