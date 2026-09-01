@@ -1,0 +1,96 @@
+#navigator-toolbox {
+    --border-radius-medium: 5px !important;
+}
+
+.tabbrowser-tab[zen-essential="true"] .tab-background {
+    background: rgba(255,255,255,.06) !important;
+}
+
+.tabbrowser-tab[zen-essential="true"]:hover .tab-background {
+    background: rgba(255,255,255,.15) !important;
+}
+
+.tabbrowser-tab[zen-essential="true"][selected] .tab-background {
+    background: rgba(255,255,255,.25) !important;
+}
+
+.tabbrowser-tab[zen-essential="true"][visuallyselected] > .tab-stack > .tab-background::before {
+    display: none !important;
+}
+.tabbrowser-tab[zen-essential="true"][visuallyselected] {
+    --zen-essential-tab-icon: none !important;
+}
+.zen-essentials-container.zen-workspace-tabs-section {
+    gap: 2px !important;
+}
+.tabbrowser-tab[zen-essential="true"] > .tab-stack {
+    margin: 2px !important;
+}
+
+#navigator-toolbox {
+  min-height: 32px !important;
+}
+
+#nav-bar {
+  min-height: 32px !important;
+  height: 32px !important;
+}
+
+#nav-bar-customization-target,
+#nav-bar .toolbarbutton-1,
+#nav-bar .toolbaritem-combined-buttons,
+#urlbar-container,
+#urlbar {
+  min-height: 32px !important;
+}
+
+#nav-bar .toolbarbutton-1,
+#nav-bar toolbarbutton,
+#urlbar-container {
+  padding-block: 0 !important;
+  margin-block: 0 !important;
+}
+
+/* URL bar 
+#urlbar,
+#searchbar {
+    min-height: 24px !important;
+    height: 24px !important;
+}
+
+#urlbar-background {
+    min-height: 24px !important;
+    height: 24px !important;
+    border-radius: 8px !important; 
+}
+
+#urlbar-input-container {
+    min-height: 28px !important;
+    height: 28px !important;
+    padding-block: 0 !important;
+}
+*/
+
+#urlbar:not([open]) .urlbar-background {
+    background: rgba(255,255,255,.06) !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#urlbar[open] .urlbar-background,
+#urlbar[breakout][breakout-extend] .urlbar-background {
+    background: #090909 !important;
+    background-image: revert !important;
+    box-shadow: revert !important;
+    border: revert !important;
+}
+
+#zoom-reset-button,
+#urlbar-zoom-button {
+    display: none !important;
+}
+
+#urlbar-input {
+    color: #afafaf !important;
+}
