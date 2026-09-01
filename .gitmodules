@@ -1,6 +1,6 @@
 [submodule "archlinux/quickshell/Callista"]
 	path = modules/user/quickshell/Callista
-	url = https://github.com/hideshots/Callista.git
+	url = https://github.com/memtable/Callista.git
 [submodule "modules/system/sddm/Opaline"]
 	path = modules/system/sddm/Opaline
-	url = https://github.com/hideshots/Opaline.git
+	url = https://github.com/memtable/Opaline.git
