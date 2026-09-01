@@ -22,7 +22,7 @@ local startup = {
   -- "waypaper --restore",
   "quickshell",
   "hypridle",
-  "wal -R",
+  -- "wal -R",
   "steam",
 }
 

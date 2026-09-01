@@ -29,7 +29,8 @@ hl.monitor({ output = "WAYLAND-1", mode = "preferred", position = "auto", scale 
 hl.config({
   render = {
     send_content_type = false,
-    direct_scanout = 0,
+    direct_scanout = 2,
+    expand_undersized_textures = true,
 
     cm_enabled = true,
     cm_auto_hdr = 0,

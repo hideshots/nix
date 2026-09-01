@@ -45,7 +45,15 @@ bind_all({
   { main_mod .. " + SHIFT + M", hl.dsp.workspace.toggle_special("rmpc") },
 })
 
--- System controls
+-- hl.bind("CONTROL + W", function()
+--   local win = hl.get_active_window()
+--   if win and win.class and string.match(string.lower(win.class), "^zen") then
+--     hl.dispatch(hl.dsp.send_shortcut({ mods = "CONTROL", key = "BackSpace" }))
+--   else
+--     hl.dispatch(hl.dsp.send_shortcut({ mods = "CONTROL", key = "W" }))
+--   end
+-- end, { auto_consuming = true })
+
 bind(main_mod .. " + ALT + S", function()
   hl.timer(function()
     hl.dispatch(hl.dsp.dpms({ action = "toggle" }))
@@ -75,6 +83,7 @@ bind_all({
   { main_mod .. " + E", exec("kitty --class " .. terminal .. "-yazi yazi") },
   { main_mod .. " + ALT + O", exec("kitty --class " .. terminal .. "-obsidian sh -c 'cd /mnt/hdd/Notes/Personal && nvim +\"autocmd BufEnter *.md ++once normal! G\" +ObsidianToday' & sleep 0.5; hyprctl dispatch setfloating") },
   { main_mod .. " + Q", exec(terminal) },
+  { main_mod .. " + ALT + Q", exec("kitty -o shell=zsh") },
   { main_mod .. " + R", exec(menu) },
   { main_mod .. " + SHIFT + E", exec(file_manager) },
   { main_mod .. " + SHIFT + Q", hl.dsp.window.close() },
@@ -240,9 +249,6 @@ hl.define_submap("cursor", function()
   -- Wl-kbptr floating jump utilities
   bind("a", exec(kbptr_cmd("-o modes=floating,click -o mode_floating.source=detect")))
   bind("Space", exec(kbptr_cmd("-o modes=floating -o mode_floating.source=detect")))
-
-  -- Drop / release any active drag
-  bind("v", exec("/home/drama/.local/bin/madlion-mouse release"))
 
   -- Swallow analog keys so they don't type characters into active windows
   local swallow_keys = { "u", "j", "i" ,"y", "h", "k", "e", "r", "o", "l", "w", "t", "f", "s", "d", "v", "b" }
