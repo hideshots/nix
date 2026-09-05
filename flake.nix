@@ -46,7 +46,7 @@
           system = "x86_64-linux";
           username = "drama";
           hostname = "desktop";
-          homeModule = ./users/drama;
+          homeModule = ./users/drama/generic.nix;
         };
       };
 
