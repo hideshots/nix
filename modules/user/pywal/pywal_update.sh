@@ -34,7 +34,7 @@ mv -f "$tmp_sddm_file" "$sddm_wallpaper_file" || {
   exit 1
 }
 
-wal -n -s -i "$img" -q
+wal -n --contrast 3.5 --cols16 lighten -s -i "$img" -q
 
 pkill -USR1 -f kitty
 
